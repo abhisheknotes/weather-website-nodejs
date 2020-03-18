@@ -7,10 +7,11 @@ const forecast = require('./utils/forecast')
 
 
 const app = express ()
+const port = process.env.PORT || 3000
 
-app.listen(3000, ()=>{
+app.listen(port, ()=>{
 
-    console.log('server has started and is on')
+    console.log('server has started and is on port' + port)
 })
 
 
