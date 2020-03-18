@@ -18,7 +18,7 @@ request({url, json:true}, (error, {body})=>{
 
     else {
 
-callbackforecast (undefined, 'Mausam is : ' + body.daily.data[0].summary + ' The current temperature is ' + body.currently.temperature + ' and barsat ka chance is ' +  body.currently.precipProbability) 
+callbackforecast (undefined, 'मौसम : ' + body.daily.data[0].summary+ ' , वर्तमान तापमान : ' + body.currently.temperature + ' डिग्री सेल्सियस है, और बारिश की संभावना : ' +  body.currently.precipProbability + ' प्रतिशत हे, और हवा की गति है :' + body.currently.windSpeed + '   किमी है|') 
    
 }
 
