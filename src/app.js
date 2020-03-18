@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000
 
 app.listen(port, ()=>{
 
-    console.log('server has started and is on port' + port)
+    console.log('server has started and is on port ' + port)
 })
 
 
