@@ -93,23 +93,24 @@ app.get('/help',(req,res)=>{
 //     }])
 
 
-app.get('/weather',(req,res) => {
+app.get('/weather', (req,res) => {
 
 if(!req.query.address) {
-    return res.send('Please provide an address!')
+    const noaddress = 'Please provide the address!'
+    return res.send(noaddress)
 }
 
 console.log(req.query.address)
 
-geocode(req.query.address, (error, {latitude, longitude, location}={}) => {
+geocode(req.query.address, (error, {latitude, longitude, location} = {}) => {
     if (error) {
-        return res.send(error)
+        return res.send({error})
     }
 
     forecast(latitude,longitude, (error, outputforecast) => {
        
         if (error) {
-           return res.send(error)
+           return res.send({ error })
         }
 
         res.send ({

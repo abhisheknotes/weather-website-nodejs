@@ -25,18 +25,22 @@ weatherForm.addEventListener('submit', (e) =>{
 
 
 
-    fetch('/weather?address='+ location) .then((response) => {
+    fetch('/weather?address='+ location).then((response) => {
+
+        if(!location)
+        {
+            messageOne.textContent = noaddress
+        }
+
 
     response.json().then((data) => {
-
+        
     if (data.error) {
-    //    console.log(data.error) 
     messageOne.textContent = data.error
     }
 
     else {
-        // console.log(data.location)
-    // console.log(data.forecast)
+    
     messageOne.textContent = data.location
     messageTwo.textContent = data.forecast
 
