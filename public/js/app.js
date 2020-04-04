@@ -13,13 +13,16 @@ const messageTwo = document.querySelector('#messagetwo')
 
 weatherForm.addEventListener('submit', (e) =>{
 
-
-
+   
     e.preventDefault()
     const location = searchterm.value
 
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
+
+    if (location == "") {
+        return messageOne.textContent = 'Please provide an address.'
+      }
 
 
 
@@ -27,10 +30,10 @@ weatherForm.addEventListener('submit', (e) =>{
 
     fetch('/weather?address='+ location).then((response) => {
 
-        if(!location)
-        {
-            messageOne.textContent = noaddress
-        }
+        // if(!location)
+        // {
+        //     messageOne.textContent = noaddress
+        // }
 
 
     response.json().then((data) => {
