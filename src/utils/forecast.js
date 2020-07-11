@@ -20,7 +20,7 @@ const forecast = (latitude, longitude, callbackforecast) => {
 				undefined,
 				"Summary : " +
 					body.daily.data[0].summary +  
-					" “\r\n” Current temperature : " +
+					\r\n " Current temperature : " +
 					body.currently.temperature +
 					" degree celsius, \r\n  and chance of rain :" +
 					body.currently.precipProbability +
