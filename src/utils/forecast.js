@@ -11,19 +11,19 @@ const forecast = (latitude, longitude, callbackforecast) => {
 
 	request({ url, json: true }, (error, { body }) => {
 		if (error) {
-			console.log("Kuch bada error hai");
+			console.log("Something is wrong.");
 		} else if (body.error) {
-			console.log("Location sahi nahi hai");
+			console.log("Location might be incorrect.");
 		} else {
 			callbackforecast(
 				undefined,
 				"Summary : " +
 					body.daily.data[0].summary +
-					" Current temperature : " +
+					" Current temperature : " \n +
 					body.currently.temperature +
-					" degree celsius, and chance of rain : " +
+					" degree celsius, and chance of rain : \n" +
 					body.currently.precipProbability +
-					" %, and speed of wind is : " +
+					" %, \n and speed of wind is : " +
 					body.currently.windSpeed +
 					"  km."
 			);
