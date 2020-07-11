@@ -1,4 +1,4 @@
-// Update comment for heroku deployment
+
 const request = require("request");
 
 const forecast = (latitude, longitude, callbackforecast) => {
@@ -20,11 +20,11 @@ const forecast = (latitude, longitude, callbackforecast) => {
 				undefined,
 				"Summary : " +
 					body.daily.data[0].summary +
-					" Current temperature : " \n +
+					" Current temperature : " +
 					body.currently.temperature +
-					" degree celsius, and chance of rain : \n" +
+					" degree celsius, and chance of rain :" +
 					body.currently.precipProbability +
-					" %, \n and speed of wind is : " +
+					" %, and speed of wind is : " +
 					body.currently.windSpeed +
 					"  km."
 			);
